@@ -5,8 +5,7 @@ const generatePassword = function () {
   const criteria = window.prompt("Which criteria would you like to include in your password? Type 'SPECIAL CHARACTERS', 'UPPERCASE', 'LOWERCASE', 'NUMERIC' ").toLowerCase();
   const length = parseInt(window.prompt("Choose a length for your password between 8 characters and 128."));
   const randomNumber = Math.floor(Math.random() * 90 + 10);
-  const randomSymbol = symbols[Math.floor(Math.random() * symbols.length - 1)];
-
+  
   // Verify Length is between 8 and 128
   if (length < 8) {
     window.alert("Length must be greater than 8 characters!");
@@ -34,12 +33,6 @@ const generatePassword = function () {
     //then add numbers to end of random password
     const shortpass = password.substring(0, password.length - 2);
     password = shortpass + randomNumber;
-  };
-
-  // if special charachter include a random special character
-  if (criteria.includes("special characters")) {
-    const shortpass = password.substring(0, password.length - 1);
-    password = shortpass + randomSymbol;
   };
 
   // if uppercase return uppercase password
