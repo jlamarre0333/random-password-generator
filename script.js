@@ -1,11 +1,11 @@
 import { alphabet, symbols } from './data.js'
 
-var generatePassword = function () {
+const generatePassword = function () {
   // Declared variabls
-  var criteria = window.prompt("Which criteria would you like to include in your password? Type 'SPECIAL CHARACTERS', 'UPPERCASE', 'LOWERCASE', 'NUMERIC' ").toLowerCase();
-  var length = parseInt(window.prompt("Choose a length for your password between 8 characters and 128."));
-  var randomNumber = Math.floor(Math.random() * 90 + 10);
-  var randomSymbol = symbols[Math.floor(Math.random() * symbols.length - 1)];
+  const criteria = window.prompt("Which criteria would you like to include in your password? Type 'SPECIAL CHARACTERS', 'UPPERCASE', 'LOWERCASE', 'NUMERIC' ").toLowerCase();
+  const length = parseInt(window.prompt("Choose a length for your password between 8 characters and 128."));
+  const randomNumber = Math.floor(Math.random() * 90 + 10);
+  const randomSymbol = symbols[Math.floor(Math.random() * symbols.length - 1)];
 
   // Verify Length is between 8 and 128
   if (length < 8) {
@@ -19,26 +19,26 @@ var generatePassword = function () {
   //generate random alphabet string off of user input lenght
   let password = "";
   for (let i = 0; i < length; i++) {
-    var isLetter = Math.random() > .5;
+    const isLetter = Math.random() > .5;
     if (isLetter) {
-      var randomLetter = alphabet[Math.floor(Math.random() * 25)];
+      const randomLetter = alphabet[Math.floor(Math.random() * 25)];
       password = password + randomLetter;
     } else {
-      var randomSymbol = symbols[Math.floor(Math.random() * 5)];
+      const randomSymbol = symbols[Math.floor(Math.random() * 5)];
       password = password + randomSymbol;
     };
   };
-  
+
   // if numeric add number to password 
   if (criteria.includes("numeric")) {
     //then add numbers to end of random password
-    var shortpass = password.substring(0, password.length - 2);
+    const shortpass = password.substring(0, password.length - 2);
     password = shortpass + randomNumber;
   };
 
   // if special charachter include a random special character
   if (criteria.includes("special characters")) {
-    var shortpass = password.substring(0, password.length - 1);
+    const shortpass = password.substring(0, password.length - 1);
     password = shortpass + randomSymbol;
   };
 
@@ -52,12 +52,12 @@ var generatePassword = function () {
 }
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  const password = generatePassword();
+  const passwordText = document.querySelector("#password");
   passwordText.value = password;
 };
 
