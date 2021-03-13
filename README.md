@@ -1,6 +1,6 @@
 # Password Generator Created with Javascript HTML and CSS
 
-Link to Github Repo:https://jlamarre0333.github.io/random-password-generator/
+Link to Github Repo:https://github.com/jlamarre0333/random-password-generator
 
 Link to deployed application using GithubPages:https://jlamarre0333.github.io/random-password-generator/
 
